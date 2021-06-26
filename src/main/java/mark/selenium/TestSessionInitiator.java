@@ -32,7 +32,7 @@ public class TestSessionInitiator {
 		initClasses(driver);
 	}
 
-	public void setBrowserOS(String browser) {
+	public void setBrowserOS(String browser, String os) {
 		this.browser = browser;
 		this.os = os;
 	}
