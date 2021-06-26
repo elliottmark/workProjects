@@ -6,13 +6,19 @@ import org.testng.annotations.*;
 import utilities.PropFileHandler;
 import io.restassured.RestAssured;
 
+/**
+ * Use testng annotations for assertions and reporting
+ * Use Restassured's java-based library to test Restful API webservices and validate HTTP responses
+ *
+ */
+
 public class TestRunner {
 
 	TestSessionInitiator test;
 
 	@BeforeSuite
 	public void startSession() {
-		test = new TestSessionInitiator(PropFileHandler.readProperty("browser"));
+		test = new TestSessionInitiator(PropFileHandler.readProperty("browser"),PropFileHandler.readProperty("os"));
 	}
 	
 	// Api test code is started from here
@@ -23,6 +29,7 @@ public class TestRunner {
 		System.out.println(">>>>>>>>>>>>>>>>>>> API TEST has been successfully completed");
 		Reporter.log("Get request is successfully passed");
 	}
+	
 	//Api test code ends here
 
 	// UI Test code is started from here
