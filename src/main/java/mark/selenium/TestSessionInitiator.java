@@ -28,7 +28,7 @@ public class TestSessionInitiator {
 
 	public TestSessionInitiator(String browser, String os) {
 		setBrowserOS(browser,os);
-		initialize(getBrowser());
+		initialize(getBrowser(),getOS());
 		initClasses(driver);
 	}
 
@@ -40,9 +40,15 @@ public class TestSessionInitiator {
 	public String getBrowser() {
 		return this.browser;
 	}
+	
+	public String getOS() {
+		return this.os;
+	}
 
-	public void initialize(String browserName) {
-		if(this.os=="windows") {
+	public void initialize(String browserName,String os) {
+		
+		System.out.println("----------This OS:-----------" + os);
+		if(os.equals("windows")) {
 			System.out.println("--------inside Windows ------");
 			switch (browserName.toLowerCase()) {
 			case "chrome":
