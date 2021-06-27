@@ -22,6 +22,7 @@ public class TestRunner {
 	}
 	
 	// Api test code is started from here
+<<<<<<< HEAD
 	@Test
 	public void getAPIRequest(){
 		int code = RestAssured.get(PropFileHandler.readProperty("apiURL")).getStatusCode();
@@ -30,6 +31,15 @@ public class TestRunner {
 		Reporter.log("Get request is successfully passed");
 	}
 	
+=======
+//	@Test
+//	public void getAPIRequest(){
+//		int code = RestAssured.get(PropFileHandler.readProperty("apiURL")).getStatusCode();
+//		Assert.assertEquals(code, 200,"Status code is not comming as 200");
+//		System.out.println(">>>>>>>>>>>>>>>>>>> API TEST has been successfully completed");
+//		Reporter.log("Get request is successfully passed");
+//	}
+>>>>>>> 6258d13f8e5d61fb5c9f47c418312e87625776e5
 	//Api test code ends here
 
 	// UI Test code is started from here
