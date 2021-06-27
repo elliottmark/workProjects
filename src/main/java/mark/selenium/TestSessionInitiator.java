@@ -81,7 +81,7 @@ public class TestSessionInitiator {
 			case "ch":
 				System.setProperty("webdriver.chrome.driver", PropFileHandler.readProperty("driverpath") + "chromedriver");
 				ChromeOptions options = new ChromeOptions();
-				options.addArguments('--headless');
+				options.addArguments("--headless");
 				options.addArguments("--disable-dev-shm-usage");
 				options.addArguments("--no-sandbox"); // Bypass OS security model
 				driver = new ChromeDriver(options);
