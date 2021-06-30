@@ -2,6 +2,7 @@ package mark.selenium;
 
 import static org.testng.Assert.fail;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
 /**
- * Created by Harshit
+ * BasePage contains reusable functions
  */
 public class BasePage {
 
@@ -54,6 +55,12 @@ public class BasePage {
 			fail("[UNHANDLED EXCEPTION]: " + npe.getLocalizedMessage());
 		}
 		return false;
+	}
+	
+	protected boolean clickOnElementViaJS(String elementToken) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.querySelector(\""+elementToken+"\").click()");
+		return true;
 	}
 
 	protected String logMessage(String message) {
