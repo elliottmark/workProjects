@@ -22,7 +22,7 @@ public class HomePage extends BasePage {
 	}
 
 	public void selectCareerOption() {
-		Assert.assertEquals(clickOnElement(career), true, "Not able to click on Career option");
+		Assert.assertEquals(clickOnElementViaJS("ul#top-menu a[href$='/careers/']"), true, "Not able to click on Career option");
 		Reporter.log("Successfully clicked on Career option");
 	}
 
@@ -33,7 +33,8 @@ public class HomePage extends BasePage {
 	}
 	
 	public void clickOnViewJobs() {
-		Assert.assertEquals(clickOnElement(viewJobs), true, "Not able to click on view jobs button");
+		waitToLoad(2000);
+		Assert.assertEquals(clickOnElementViaJS("div.tp-mask-wrap>div.rev-btn"), true, "Not able to click on view jobs button");
 		Reporter.log("Successfully clicked on view jobs button");
 	}
 	
