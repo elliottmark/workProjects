@@ -54,7 +54,9 @@ public class TestSessionInitiator {
 			case "chrome":
 			case "ch":
 				System.setProperty("webdriver.chrome.driver", PropFileHandler.readProperty("driverpath") + "chromedriver.exe");
-				driver = new ChromeDriver();
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments("--headless");
+				driver = new ChromeDriver(options);
 				break;
 			case "firefox":
 			case "ff":
