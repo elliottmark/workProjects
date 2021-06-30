@@ -18,7 +18,7 @@ public class TestRunner {
 
 	@BeforeSuite
 	public void startSession() {
-		test = new TestSessionInitiator(PropFileHandler.readProperty("browser"),PropFileHandler.readProperty("os"));
+		test = new TestSessionInitiator(PropFileHandler.readProperty("browser"));
 	}
 	
 	// Api test code is started from here
