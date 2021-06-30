@@ -26,26 +26,21 @@ public class TestSessionInitiator {
 	//Defining classes Variables
 	public static HomePage homepage;
 
-	public TestSessionInitiator(String browser, String os) {
-		setBrowserOS(browser,os);
-		initialize(getBrowser(),getOS());
+	public TestSessionInitiator(String browser) {
+		setBrowserOS(browser);
+		initialize(getBrowser());
 		initClasses(driver);
 	}
 
-	public void setBrowserOS(String browser, String os) {
+	public void setBrowserOS(String browser) {
 		this.browser = browser;
-		this.os = os;
 	}
 
 	public String getBrowser() {
 		return this.browser;
 	}
-	
-	public String getOS() {
-		return this.os;
-	}
 
-	public void initialize(String browserName,String os) {
+	public void initialize(String browserName) {
 		os = System.getProperty("os.name").toLowerCase();
 		System.out.println("----------This OS:-----------" + os);
 		if(os.contains("win")) {
