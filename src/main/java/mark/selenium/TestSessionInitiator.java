@@ -46,9 +46,9 @@ public class TestSessionInitiator {
 	}
 
 	public void initialize(String browserName,String os) {
-		
+		os = System.getProperty("os.name").toLowerCase();
 		System.out.println("----------This OS:-----------" + os);
-		if(os.equals("windows")) {
+		if(os.contains("win")) {
 			System.out.println("--------inside Windows ------");
 			switch (browserName.toLowerCase()) {
 			case "chrome":
@@ -76,6 +76,7 @@ public class TestSessionInitiator {
 			}
 		}
 		else {
+			System.out.println("--------inside Linux ------");
 			switch (browserName.toLowerCase()) {
 			case "chrome":
 			case "ch":
