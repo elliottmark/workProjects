@@ -53,19 +53,19 @@ public class HomePage extends BasePage {
 	}
 
 	public void verifyCareerPageIsOpened() {
-		waitToLoad(2000);
+		waitToLoad(6000);
 		Assert.assertEquals(driver.getCurrentUrl().contains("careers/"), true, "Not able to navigate to Career page");
 		Reporter.log("Successfully navigated to career page");
 	}
 	
 	public void clickOnViewJobs() {
-		waitToLoad(2000);
+		waitToLoad(6000);
 		Assert.assertEquals(clickOnElementViaJS("div.tp-mask-wrap>div.rev-btn"), true, "Not able to click on view jobs button");
 		Reporter.log("Successfully clicked on view jobs button");
 	}
 	
 	public void verifyJobsPageIsOpened() {
-		waitToLoad(2000);
+		waitToLoad(6000);
 		Assert.assertEquals(driver.getCurrentUrl().contains("jobs/"), true, "Not able to navigate to Jobs page");
 		Reporter.log("Successfully navigated to jobs page");
 	}
