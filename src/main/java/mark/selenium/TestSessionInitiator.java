@@ -79,7 +79,9 @@ public class TestSessionInitiator {
 			System.out.println("--------inside Linux ------");
 			switch (browserName.toLowerCase()) {
 			case "chrome":
+				System.out.println("--------inside Linux/chrome ------");
 			case "ch":
+				System.out.println("--------inside Linux/ch ------");
 				System.setProperty("webdriver.chrome.driver", PropFileHandler.readProperty("driverpath") + "chromedriver");
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments("--headless");
@@ -106,8 +108,10 @@ public class TestSessionInitiator {
 				break;
 			}
 		}
+		System.out.println("--------driver.manage().timeouts().implicitlyWait ------");
 		driver.manage().timeouts().implicitlyWait(Integer.parseInt(PropFileHandler.readProperty("timeout")), TimeUnit.SECONDS);
 		driver.manage().window().maximize();
+		System.out.println("--------driver.manage().timeouts().implicitlyWait done! ------");
 	}
 
 	public void initClasses(WebDriver driver) {
