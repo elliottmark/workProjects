@@ -43,7 +43,8 @@ public class TestSessionInitiator {
 	public void initialize(String browserName) {
 		os = System.getProperty("os.name").toLowerCase();
 		System.out.println("----------This OS:-----------" + os);
-		osType = OSInfo.getOSType("osType").toLowerCase();
+//		osType = OSInfo.getOSType("osType").toLowerCase();
+		String osType= System.getProperty("os.arch");
 		System.out.println("----------This osType:-----------" + osType);
 		if(os.contains("win")) {
 			System.out.println("--------inside Windows ------");
