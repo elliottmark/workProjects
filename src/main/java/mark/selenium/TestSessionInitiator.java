@@ -79,6 +79,9 @@ public class TestSessionInitiator {
 			
 			System.out.println("--------DockerCheck------");
 //			String dockerCheckCmd = cat /proc/self/cgroup;
+			Process p = new ProcessBuilder("cat", "/proc/self/cgroup").start();
+			String stderr = IOUtils.toString(p.getErrorStream(), Charset.defaultCharset());
+			String stdout = IOUtils.toString(p.getInputStream(), Charset.defaultCharset());
 			
 			switch (browserName.toLowerCase()) {
 			case "chrome":
