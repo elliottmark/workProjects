@@ -78,6 +78,8 @@ public class TestSessionInitiator {
 			System.out.println("--------inside Linux ------");
 			
 			System.out.println("--------DockerCheck------");
+//			boolean isDocker = System.getProperty("os.name").toLowerCase().startsWith("docker");
+//			boolean isDocker = System.getProperty("os.name").toLowerCase().contains("docker");
 //			String dockerCheckCmd = cat /proc/self/cgroup;
 			Process p = new ProcessBuilder("cat", "/proc/self/cgroup").start();
 			String stderr = IOUtils.toString(p.getErrorStream(), Charset.defaultCharset());
