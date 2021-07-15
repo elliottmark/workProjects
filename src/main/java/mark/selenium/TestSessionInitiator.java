@@ -8,6 +8,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import utilities.PropFileHandler;
+import org.apache.commons.io.IOUtils;
 
 /**
  * TestSessionInitiator class is responsible for loading the configuration from property files, initializing
