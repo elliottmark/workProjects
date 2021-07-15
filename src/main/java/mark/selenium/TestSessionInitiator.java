@@ -7,10 +7,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import utilities.PropFileHandler;
 
 /**
@@ -80,29 +76,9 @@ public class TestSessionInitiator {
 		}
 		else {
 			System.out.println("--------inside Linux ------");
-//			String dockerCheckCmd = cat /proc/self/cgroup;
-			System.out.println("--------DockerCheck------");
 			
-			Runtime rt = Runtime.getRuntime();
-			String[] commands = {"cat", "/proc/self/cgroup"};
-			Process proc = rt.exec(commands);
-
-			BufferedReader stdInput = new BufferedReader(new InputStreamReader(proc.getInputStream()));
-
-			BufferedReader stdError = new BufferedReader(new InputStreamReader(proc.getErrorStream()));
-
-			// Read the output from the command
-			System.out.println("Here is the standard output of the command:\n");
-			String s = null;
-			while ((s = stdInput.readLine()) != null) {
-    				System.out.println(s);
-			}
-
-			// Read any errors from the attempted command
-			System.out.println("Here is the standard error of the command (if any):\n");
-			while ((s = stdError.readLine()) != null) {
-    				System.out.println(s);
-			}
+			System.out.println("--------DockerCheck------");
+//			String dockerCheckCmd = cat /proc/self/cgroup;
 			
 			switch (browserName.toLowerCase()) {
 			case "chrome":
