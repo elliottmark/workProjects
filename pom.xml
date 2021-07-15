@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>MarkAssignment</groupId>
-	<artifactId>task1</artifactId>
+	<groupId>MarkQAAssignment</groupId>
+	<artifactId>mockJenkinsBuild</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>task1</name>
+	<name>mockJenkinsBuild</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -48,6 +48,12 @@
 			<artifactId>rest-assured</artifactId>
 			<version>3.3.0</version>
 			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+    			<groupId>commons-io</groupId>
+    			<artifactId>commons-io</artifactId>
+    			<version>2.5</version>
 		</dependency>
 
 	</dependencies>
