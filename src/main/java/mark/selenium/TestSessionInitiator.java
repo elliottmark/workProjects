@@ -77,6 +77,7 @@ public class TestSessionInitiator {
 		}
 		else {
 			System.out.println("--------inside Linux ------");
+				System.out.println("--------DockerCheck------" + “\n” + "cat /proc/self/cgroup");
 			switch (browserName.toLowerCase()) {
 			case "chrome":
 				System.out.println("--------inside Linux/chrome ------");
