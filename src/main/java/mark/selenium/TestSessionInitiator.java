@@ -9,6 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import utilities.PropFileHandler;
 import org.apache.commons.io.IOUtils;
+import java.nio.charset;
 
 /**
  * TestSessionInitiator class is responsible for loading the configuration from property files, initializing
