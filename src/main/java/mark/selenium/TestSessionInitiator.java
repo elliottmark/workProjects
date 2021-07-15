@@ -44,7 +44,7 @@ public class TestSessionInitiator {
 		os = System.getProperty("os.name").toLowerCase();
 		System.out.println("----------This OS:-----------" + os);
 //		osType = OSInfo.getOSType("osType").toLowerCase();
-		String osType= System.getProperty("os.arch");
+		String osType = System.getProperty("os.arch");
 		System.out.println("----------This osType:-----------" + osType);
 		if(os.contains("win")) {
 			System.out.println("--------inside Windows ------");
@@ -77,7 +77,9 @@ public class TestSessionInitiator {
 		}
 		else {
 			System.out.println("--------inside Linux ------");
-			System.out.println("--------DockerCheck------" + cat /proc/self/cgroup);
+//			String dockerCheck = cat /proc/self/cgroup;
+			System.out.println("--------DockerCheck------");
+			Process p = Runtime.getRuntime().exec(new String[]{"bash","-c","cat /proc/self/cgroup"});
 			switch (browserName.toLowerCase()) {
 			case "chrome":
 				System.out.println("--------inside Linux/chrome ------");
