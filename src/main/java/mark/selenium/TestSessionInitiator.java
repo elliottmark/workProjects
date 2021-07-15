@@ -87,11 +87,9 @@ public class TestSessionInitiator {
 			String[] commands = {"cat", "/proc/self/cgroup"};
 			Process proc = rt.exec(commands);
 
-			BufferedReader stdInput = new BufferedReader(new 
-     			InputStreamReader(proc.getInputStream()));
+			BufferedReader stdInput = new BufferedReader(new InputStreamReader(proc.getInputStream()));
 
-			BufferedReader stdError = new BufferedReader(new 
-     			InputStreamReader(proc.getErrorStream()));
+			BufferedReader stdError = new BufferedReader(new InputStreamReader(proc.getErrorStream()));
 
 			// Read the output from the command
 			System.out.println("Here is the standard output of the command:\n");
