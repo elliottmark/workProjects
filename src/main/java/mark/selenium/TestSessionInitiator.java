@@ -7,12 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+
 import utilities.PropFileHandler;
-import org.apache.commons.io.IOUtils;
-import java.nio.*;
-import java.nio.charset.*;
-import java.io.*;
-import java.lang.*;
 
 /**
  * TestSessionInitiator class is responsible for loading the configuration from property files, initializing
@@ -47,9 +43,6 @@ public class TestSessionInitiator {
 	public void initialize(String browserName) {
 		os = System.getProperty("os.name").toLowerCase();
 		System.out.println("----------This OS:-----------" + os);
-//		osType = OSInfo.getOSType("osType").toLowerCase();
-		String osType = System.getProperty("os.arch");
-		System.out.println("----------This osType:-----------" + osType);
 		if(os.contains("win")) {
 			System.out.println("--------inside Windows ------");
 			switch (browserName.toLowerCase()) {
@@ -57,7 +50,7 @@ public class TestSessionInitiator {
 			case "ch":
 				System.setProperty("webdriver.chrome.driver", PropFileHandler.readProperty("driverpath") + "chromedriver.exe");
 				ChromeOptions options = new ChromeOptions();
-				options.addArguments("--headless");
+//				options.addArguments("--headless");
 				driver = new ChromeDriver(options);
 				break;
 			case "firefox":
@@ -81,20 +74,9 @@ public class TestSessionInitiator {
 		}
 		else {
 			System.out.println("--------inside Linux ------");
-			
-			System.out.println("--------DockerCheck------");
-//			boolean isDocker = System.getProperty("os.name").toLowerCase().startsWith("docker");
-//			boolean isDocker = System.getProperty("os.name").toLowerCase().contains("docker");
-//			String dockerCheckCmd = cat /proc/self/cgroup;
-			Process p = new ProcessBuilder("cat", "/proc/self/cgroup").start();
-			String stderr = IOUtils.toString(p.getErrorStream(), Charset.defaultCharset());
-			String stdout = IOUtils.toString(p.getInputStream(), Charset.defaultCharset());
-			
 			switch (browserName.toLowerCase()) {
 			case "chrome":
-				System.out.println("--------inside Linux/chrome ------");
 			case "ch":
-				System.out.println("--------inside Linux/ch ------");
 				System.setProperty("webdriver.chrome.driver", PropFileHandler.readProperty("driverpath") + "chromedriver");
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments("--headless");
@@ -121,10 +103,8 @@ public class TestSessionInitiator {
 				break;
 			}
 		}
-		System.out.println("--------driver.manage().timeouts().implicitlyWait ------");
 		driver.manage().timeouts().implicitlyWait(Integer.parseInt(PropFileHandler.readProperty("timeout")), TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		System.out.println("--------driver.manage().timeouts().implicitlyWait done! ------");
 	}
 
 	public void initClasses(WebDriver driver) {

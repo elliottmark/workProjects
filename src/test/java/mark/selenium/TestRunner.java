@@ -18,9 +18,7 @@ public class TestRunner {
 
 	@BeforeSuite
 	public void startSession() {
-		System.out.println(">>>>>>>>>>>>>>>>>>> IN TESTRUNNER BEFORESUITE <<<<<<<<<<<<<<<<<<<<");
 		test = new TestSessionInitiator(PropFileHandler.readProperty("browser"));
-		System.out.println(">>>>>>>>>>>>>>>>>>> EXITING TESTRUNNER BEFORESUITE <<<<<<<<<<<<<<<<<<<<");
 	}
 	
 	// Api test code is started from here
