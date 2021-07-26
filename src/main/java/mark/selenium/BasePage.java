@@ -35,7 +35,7 @@ public class BasePage {
 
 	protected WebElement getElementWhenVisible(By elementToken) {
 		WebElement foundElement=null;
-		WebDriverWait wait = new WebDriverWait(driver, 60);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
 		try {
 			foundElement = wait.until(ExpectedConditions.elementToBeClickable(elementToken));
 		} catch (NoSuchElementException excp) {
