@@ -23,7 +23,13 @@ javac -version'''
 
     stage('Run Maven Test') {
       steps {
-        sh 'mvn clean'
+        sh 'mvn clean test'
+      }
+    }
+
+    stage('Post Build Steps') {
+      steps {
+        chuckNorris()
       }
     }
 
