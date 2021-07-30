@@ -82,7 +82,7 @@
 			<plugin>
 				<groupId>org.nuisto</groupId>
 				<artifactId>mule-lint-maven-plugin</artifactId>
-				<version>0.5.1</version>
+				<version>${mule.lint.version}</version>
 				<executions>
 					<execution>
 						<id>runit</id>
