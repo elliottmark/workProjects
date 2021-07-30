@@ -18,9 +18,9 @@ javac -version'''
           }
         }
 
-        stage('Lint /src/main/java') {
+        stage('Verify rules.txt') {
           steps {
-            sh 'mvn org.nuisto:mule-lint-maven-plugin:analyze-mule'
+            fileExists 'rules.txt'
           }
         }
 
