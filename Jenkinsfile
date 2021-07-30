@@ -18,6 +18,12 @@ javac -version'''
           }
         }
 
+        stage('Lint /src/main/java') {
+          steps {
+            sh 'mvn org.nuisto:mule-lint-maven-plugin:analyze-mule'
+          }
+        }
+
       }
     }
 
