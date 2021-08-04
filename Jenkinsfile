@@ -29,7 +29,7 @@ javac -version'''
 
     stage('Run Maven Test') {
       steps {
-        sh 'mvn clean test'
+        sh 'mvn clean compile'
       }
     }
 
